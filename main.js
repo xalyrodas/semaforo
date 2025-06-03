@@ -5,6 +5,59 @@ import { crearLuzVerde } from "./verde.js";
 const FIREBASE_URL = "https://semaforo-2b771-default-rtdb.firebaseio.com/estado.json";
 let estadoActual = "rojo";
 
+function header() {
+    const header = document.createElement("div");
+    header.className = "header"
+    
+    const divimg = document.createElement("div")
+    divimg.className = "divimg"
+    header.appendChild(divimg)
+
+    const img = document.createElement("img")
+    img.src = "https://brandlogos.net/wp-content/uploads/2020/09/raspberry-pi-logo.png"
+    divimg.appendChild(img)
+
+    const divText = document.createElement("p")
+    divText.className = "textoRPW"
+    divText.innerText = "Raspberry Pico W"
+    header.appendChild(divText)
+    
+    const divVers = document.createElement("div")
+    divVers.className = "divVers"
+    divVers.innerText = "V 1.0"
+    header.appendChild(divVers)
+
+    document.body.appendChild(header);
+}
+
+function botones() {
+    const divbotones = document.createElement("div")
+    divbotones.className = "divbotones"
+
+    const btnDetener = document.createElement("button");
+    btnDetener.className = "btnD";
+    btnDetener.innerText = "Detener";
+    divbotones.appendChild(btnDetener)
+
+    const btnRojo = document.createElement("button");
+    btnRojo.className = "btnR";
+    btnRojo.innerText = "Rojo";
+    divbotones.appendChild(btnRojo)
+
+    const btnAmarillo = document.createElement("button");
+    btnAmarillo.className = "btnA";
+    btnAmarillo.innerText = "Amarillo";
+    divbotones.appendChild(btnAmarillo)
+
+    const btnVerde = document.createElement("button");
+    btnVerde.className = "btnV";
+    btnVerde.innerText = "Verde";
+    divbotones.appendChild(btnVerde)
+
+    document.body.appendChild(divbotones);
+
+}
+
 function crearSemaforo() {
     const semaforo = document.createElement("div");
     semaforo.className = "semaforo";
@@ -55,6 +108,8 @@ function iniciarEscuchaFirebase() {
 }
 
 // Inicialización
+header();
+botones();
 crearSemaforo();
 actualizarSemaforo(estadoActual);
 iniciarEscuchaFirebase();
