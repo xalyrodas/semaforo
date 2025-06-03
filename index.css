@@ -1,0 +1,43 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.semaforo {
+  width: 100px;
+  height: 300px;
+  background-color: #333;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.luz {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #555;
+}
+
+.luz.rojo { background-color: #f00; }
+.luz.amarillo { background-color: #ff0; }
+.luz.verde { background-color: #0f0; }
+
+.luz.activo {
+  box-shadow: 0 0 20px #f8f8f8, 0 0 40px currentColor;
+}
+
+.controls button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
